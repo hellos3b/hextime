@@ -1,19 +1,15 @@
 # A clock that represents the time as hex color values
-I saw a project a little while ago, where I discovered that the time (in format 00:00:00) works perfectly for hexadecimal codes. I decided to create a <i>very</i> small project using vanilla JS, to represent the live time as a color. 
 
-<pre>
-<code>setInterval(function() {
-  today = new Date();
-  hex = "#" + (today.getHours() < 10 ? '0' : '') + today.getHours() + "" 
-      + (today.getMinutes() < 10 ? '0' : '') + today.getMinutes() + "" 
-      + (today.getSeconds() < 10 ? '0' : '') + today.getSeconds();
-  document.querySelector("#clock").innerHTML = hex;
-  document.body.style.backgroundColor = hex;
-}, 1)</code>
-</pre>
+> *But forked to use streams*
 
-This small codeblock gets the current time, formats it (placing a zero before the number if it is less than ten) and then appends an <code>#</code> before it. That newly created hex code is then placed within the <code>#clock</code> element, and is set as the <code>backgroundColor</code> of the body. Changing the color of the background with the hex color gives the site an almost meditative feel. 
+I've been reading up a lot on [RxJS](https://github.com/ReactiveX/rxjs) and [Ramda](https://github.com/ramda/ramda) and decided it'd be fun to quickly try to edit Jamel's clock to use streams.
 
-Feel free to play around with the code!
+This also uses [HyperHTML](https://github.com/WebReflection/hyperHTML) which I think is a neat alternative to using a feature-full framework like React or Vue
 
-See it live <a href="https://jamelhammoud.com/projects/hextime/">Here</a>.
+### I'm aware it's overkill
+
+Pulling in ~45kb from two libraries to replace what was about 6 lines of vanilla js is definitely overkill. I wouldn't do that if I was working on something I was actually deploying. I just thought it'd be fun 
+
+### Original
+
+Original vanilla js clock here: https://github.com/JamelHammoud/hextime

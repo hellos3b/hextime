@@ -3,7 +3,10 @@ body {
     overflow-x: hidden;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
-    transition: 0.5s;
+}
+
+#root {
+    transition: 0.3s;
 }
 
 main {
